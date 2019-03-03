@@ -1,16 +1,26 @@
 import React from "react"
-import SquirrelCard from "./SquirrelCard";
+import SquirrelCard from "./SquirrelCard"
 
 class MySquirrels extends React.Component {
-    render() {
-        return (
-            <>
-                <h1>MySquirrels</h1>
-                <SquirrelCard />
-            </>
-        )
-    }
-}
+  squirrelsMapped = () =>
+    this.props.mySquirrels.map(squirrel => (
+      <SquirrelCard
+        key={squirrel.id}
+        squirrel={squirrel}
+        clickSquirrel={this.props.clickSquirrel}
+      />
+    ))
 
+  render() {
+    return (
+      <>
+        <div className="squirrel-list">
+          <h2>My Squirrels</h2>
+          {this.squirrelsMapped()}
+        </div>
+      </>
+    )
+  }
+}
 
 export default MySquirrels

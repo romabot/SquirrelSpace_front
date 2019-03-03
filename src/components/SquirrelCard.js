@@ -4,23 +4,26 @@ const SquirrelCard = props => {
   if (!props.squirrel) {
     return null
   }
+  const { squirrel } = props
 
-  const {squirrel} = props
-  
-  const snacksFind = () => {
-      
-    return squirrel.snacks.map(snack => {
-        return snack.name
-    })
+  const buttonSwitch = () => {
+    if (squirrel.caught) {
+      return <button onClick={clickHandle}>RELEASE!</button>
+    } else {
+      return <button onClick={clickHandle}>🥅CATCH SQUIRREL</button>
+    }
+  }
 
+  const clickHandle = () => {
+    return props.clickSquirrel(squirrel)
   }
 
   return (
     <>
-      <h3>{squirrel.name}</h3>
+      <h1>{squirrel.name}</h1>
       <img alt={squirrel.name} src={squirrel.img} />
-      <p>{squirrel.bio}</p>
-      <h5>{snacksFind()}</h5>
+      <br />
+      {buttonSwitch()}
     </>
   )
 }

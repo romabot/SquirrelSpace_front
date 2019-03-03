@@ -1,0 +1,9 @@
+.squirrels-container {
+    display: flex; 
+    justify-content: space-around;
+}
+
+.squirrel-list {
+    width: 48%;
+    border: 1px solid gray;
+}

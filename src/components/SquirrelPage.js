@@ -4,7 +4,8 @@ import MySquirrels from "./MySquirrels"
 
 class SquirrelPage extends React.Component {
   state = {
-    allSquirrels: []
+    allSquirrels: [],
+    mySquirrels: []
   }
 
   componentDidMount() {
@@ -15,12 +16,51 @@ class SquirrelPage extends React.Component {
       })
   }
 
+  catchSquirrel = squirrelObj => {
+    squirrelObj.caught = true
+
+    this.setState({
+      allSquirrels: this.state.allSquirrels.filter(squirrel => squirrel.id !== squirrelObj.id)
+    })
+
+    let squirrelFav = this.state.mySquirrels.find(
+      squirrel => squirrel.id === squirrelObj.id
+    )
+    if (!squirrelFav) {
+      this.setState({
+        mySquirrels: [...this.state.mySquirrels, squirrelObj]
+      })
+    }
+  }
+
+  removeSquirrel = squirrelObj => {
+    squirrelObj.caught = false 
+
+    this.setState({
+      allSquirrels: [squirrelObj,...this.state.allSquirrels]
+    })
+
+    this.setState({
+      mySquirrels: this.state.mySquirrels.filter(squirrel => squirrel.id !== squirrelObj.id )
+    })
+  }
+
+
   render() {
     return (
       <>
         <h1>SquirrelPage</h1>
-        <SquirrelList allSquirrels={this.state.allSquirrels} />
-        <MySquirrels />
+        <div className="squirrels-container">
+          <SquirrelList
+            className="squirrel-list"
+            allSquirrels={this.state.allSquirrels}
+            clickSquirrel={this.catchSquirrel}
+          />
+          <MySquirrels 
+            className="squirrel-list" 
+            mySquirrels={this.state.mySquirrels} 
+            clickSquirrel={this.removeSquirrel} />
+        </div>
       </>
     )
   }
