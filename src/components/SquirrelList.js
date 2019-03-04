@@ -32,7 +32,7 @@ class SquirrelList extends React.Component {
     return (
       <>
         <div className="squirrel-list">
-          <h2>Available Squirrels</h2>
+          {/* <h2>Available Squirrels</h2> */}
           <SquirrelSearch
             searchQuery={this.state.searchQuery}
             doSearch={this.doSearch}

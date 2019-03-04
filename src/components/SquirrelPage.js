@@ -1,6 +1,7 @@
 import React from "react"
 import SquirrelList from "./SquirrelList"
 import MySquirrels from "./MySquirrels"
+import { Link } from 'react-router-dom' 
 
 class SquirrelPage extends React.Component {
   state = {
@@ -49,7 +50,8 @@ class SquirrelPage extends React.Component {
   render() {
     return (
       <>
-        <h1>SquirrelPage</h1>
+        <Link to={"/"}>HOME</Link>
+        <h1 className="main-logo">🐿 SquirrelSpace</h1>
         <div className="squirrels-container">
           <SquirrelList
             className="squirrel-list"

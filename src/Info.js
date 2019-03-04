@@ -16,7 +16,7 @@ class Info extends React.Component {
 
     render() {
         return (<div>
-            <Link to={`/`}>HOME</Link>
+            <Link to={`/squirrels`}>Back To Squirrels</Link>
             <h1>{this.state.squirrel.name}</h1>
             <img alt={this.state.squirrel.name} src={this.state.squirrel.img} />
             <br />

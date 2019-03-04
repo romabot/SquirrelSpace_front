@@ -21,7 +21,7 @@ const SquirrelCard = props => {
 
   return (
     <>
-      <h1>{squirrel.name}</h1>
+      <h2>{squirrel.name}</h2>
       <img alt={squirrel.name} src={squirrel.img} />
       <br />
       <Link to={`/info/${squirrel.id}`}>INFO</Link>
