@@ -1,7 +1,7 @@
 import React from "react"
 import SquirrelList from "./SquirrelList"
 import MySquirrels from "./MySquirrels"
-import { Link } from 'react-router-dom' 
+import { Link } from "react-router-dom"
 
 class SquirrelPage extends React.Component {
   state = {
@@ -21,7 +21,9 @@ class SquirrelPage extends React.Component {
     squirrelObj.caught = true
 
     this.setState({
-      allSquirrels: this.state.allSquirrels.filter(squirrel => squirrel.id !== squirrelObj.id)
+      allSquirrels: this.state.allSquirrels.filter(
+        squirrel => squirrel.id !== squirrelObj.id
+      )
     })
 
     let squirrelFav = this.state.mySquirrels.find(
@@ -35,33 +37,40 @@ class SquirrelPage extends React.Component {
   }
 
   removeSquirrel = squirrelObj => {
-    squirrelObj.caught = false 
+    squirrelObj.caught = false
 
     this.setState({
-      allSquirrels: [squirrelObj,...this.state.allSquirrels]
+      allSquirrels: [squirrelObj, ...this.state.allSquirrels]
     })
 
     this.setState({
-      mySquirrels: this.state.mySquirrels.filter(squirrel => squirrel.id !== squirrelObj.id )
+      mySquirrels: this.state.mySquirrels.filter(
+        squirrel => squirrel.id !== squirrelObj.id
+      )
     })
   }
-
 
   render() {
     return (
       <>
-        <Link id="toplink" to={"/"}>🐿 SquirrelSpace </Link>
-        <h1 className="main-logo"></h1>
+        <Link id="toplink" to={"/"}>
+          🐿 SquirrelSpace
+        </Link>
+        <Link id="stashLink" to={"/stashes"}>
+          🧺 STASHES
+        </Link>
+        <h1 className="main-logo" />
         <div className="squirrels-container">
           <SquirrelList
             className="squirrel-list"
             allSquirrels={this.state.allSquirrels}
             clickSquirrel={this.catchSquirrel}
           />
-          <MySquirrels 
-            className="squirrel-list" 
-            mySquirrels={this.state.mySquirrels} 
-            clickSquirrel={this.removeSquirrel} />
+          <MySquirrels
+            className="squirrel-list"
+            mySquirrels={this.state.mySquirrels}
+            clickSquirrel={this.removeSquirrel}
+          />
         </div>
       </>
     )
