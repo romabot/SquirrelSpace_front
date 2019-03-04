@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom' 
 
 const SquirrelCard = props => {
   if (!props.squirrel) {
@@ -23,6 +24,7 @@ const SquirrelCard = props => {
       <h1>{squirrel.name}</h1>
       <img alt={squirrel.name} src={squirrel.img} />
       <br />
+      <Link to={`/info/${squirrel.id}`}>INFO</Link>
       {buttonSwitch()}
     </>
   )
