@@ -13,14 +13,24 @@ class Info extends React.Component {
         .then(squirrel => this.setState({squirrel}))
     }
 
+    stashesMap = () => {
+        console.log(this.state.squirrel.snacks)
+        // return this.state.squirrel.stashes.map(stash => {
+        //     return stash
+        // })
+        }
+  
+
 
     render() {
         return (<div>
-            <Link to={`/squirrels`}>Back To Squirrels</Link>
+            <Link to={`/squirrels`}>🌈 Back To Squirrels</Link>
             <h1>{this.state.squirrel.name}</h1>
+            <p>{this.state.squirrel.bio}</p>
             <img alt={this.state.squirrel.name} src={this.state.squirrel.img} />
             <br />
-            <h3>STASH:</h3>
+            <h2>STASH:</h2>
+            <h2>{this.stashesMap()}</h2>
 
         </div>);
     }

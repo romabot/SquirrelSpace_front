@@ -50,8 +50,8 @@ class SquirrelPage extends React.Component {
   render() {
     return (
       <>
-        <Link to={"/"}>HOME</Link>
-        <h1 className="main-logo">🐿 SquirrelSpace</h1>
+        <Link id="toplink" to={"/"}>🐿 SquirrelSpace </Link>
+        <h1 className="main-logo"></h1>
         <div className="squirrels-container">
           <SquirrelList
             className="squirrel-list"

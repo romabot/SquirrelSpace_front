@@ -5,21 +5,55 @@
 
 .squirrel-list {
     width: 48%;
-    border: 1px solid gray;
+    border: 1px solid rgb(255, 255, 255);
+
 }
 
 .welcome-img {
+    width: 70%;
+    float: center;
+}
+
+/* ul.welcome-img {
+    li {
+        max-width: 33%;
+    }
+    a {
+        img {
+            max-width: 100%;
+            transition: all .2s ease-in-out; 
+        }
+        img:hover {
+            opacity: 0.7;
+             transform: scale(1.1);
+        }
+    }
+} */
+
+
+#welcomess {
+    color: rgb(45, 178, 255);
+    font-size: 50px;
     width: 70%
 }
 
 .main-logo {
     color: rgb(253, 196, 110);
 
+}
 
+.search-form {
+    margin: 10px;
+    width: 260px; height: 50px; border: 3px solid #096b4e; padding: 10px;
+    font-size: 1em;
+    height: 1rem;
 }
 
 /* -------------------------------------------------- */
 
+body {
+    margin: 10px;
+}
 
 
 body {
@@ -44,15 +78,35 @@ h1 {
 }
 
 h2 {
-  color:rgb(255, 255, 255);
+  color:rgb(252, 200, 133);
+  margin: 10px;
+}
+
+img {
+    margin: 10px;
+
+}
+
+#toplink {
+  color: rgb(45, 178, 255);
+  font-size: 40px;
+  /* opacity: .7; */
 }
 
 a:link {
-  color: rgb(255, 211, 154);
+  margin: 10px;
+  color: rgb(45, 255, 175);
+  font-size: 20px
+}
+
+p {
+  color: rgb(45, 255, 175);
+  font-size: 25px
 }
 
 a:visited {
-  color: rgb(49, 91, 182);
+  margin: 10px;
+  color: rgb(45, 255, 175);
 }
 
 body {font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 

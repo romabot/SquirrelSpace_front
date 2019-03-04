@@ -10,8 +10,8 @@ import React from "react"
 
         render() {
             return(
-                <form className="">
-                    <input onChange={this.changeHandler} type="search" placeholder="FIND YOUR SQUIRREL!" value={this.props.searchQuery}></input>
+                <form >
+                    <input className="search-form" onChange={this.changeHandler} type="search" placeholder="FIND YOUR SQUIRREL!" value={this.props.searchQuery}></input>
                 </form>
             )
         }

@@ -9,9 +9,9 @@ const SquirrelCard = props => {
 
   const buttonSwitch = () => {
     if (squirrel.caught) {
-      return <button onClick={clickHandle}>RELEASE!</button>
+      return <button onClick={clickHandle}>🐿 RELEASE!</button>
     } else {
-      return <button onClick={clickHandle}>🥅CATCH SQUIRREL</button>
+      return <button onClick={clickHandle}>🐿 CATCH SQUIRREL</button>
     }
   }
 
@@ -22,8 +22,8 @@ const SquirrelCard = props => {
   return (
     <>
       <h2>{squirrel.name}</h2>
-      <img alt={squirrel.name} src={squirrel.img} />
-      <br />
+      <Link to={`/info/${squirrel.id}`}><img alt={squirrel.name} src={squirrel.img}/></Link>
+      <br/>
       <Link to={`/info/${squirrel.id}`}>INFO</Link>
       {buttonSwitch()}
     </>
