@@ -5,6 +5,7 @@ import Welcome from "./Welcome"
 import Stashes from "./StashPage"
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import Info from "./Info"
+import StashInfo from "./StashInfo"
 
 class App extends React.Component {
   render() {
@@ -25,6 +26,7 @@ class App extends React.Component {
               <Route exact path="/" component={Welcome} />
               <Route exact path="/squirrels" component={SquirrelPage} />
               <Route exact path="/stashes" component={Stashes} />
+              <Route path="/stashes/:id" component={StashInfo} />
               <Route path="/info/:id" component={Info} />
             </Switch>
         </main>
