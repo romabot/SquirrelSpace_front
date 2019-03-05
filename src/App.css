@@ -1,3 +1,75 @@
+
+html {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 14px;
+}
+
+body {
+  background: url(http://sfwallpaper.com/images/brown-wood-wallpaper-15.jpg);
+  background-attachment: fixed;
+  margin: 10px;
+  color: rgb(184, 184, 184);
+  padding: 0;
+  margin: 10;
+}
+
+
+a {
+  text-decoration: none;
+}
+a:link {
+  margin: 10px;
+  color: rgb(45, 255, 175);
+  font-size: 20px;
+}
+a:visited {
+  margin: 10px;
+  color: rgb(45, 255, 175);
+}
+h1 {
+  text-align: left;
+  color: rgb(252, 200, 133);
+}
+
+h2 {
+  color: rgb(252, 200, 133);
+  margin: 10px;
+}
+
+h4 {
+  margin: 0;
+}
+img {
+  margin: 10px;
+  width: 200px;
+}
+
+
+
+
+
+p {
+  color: rgb(45, 255, 175);
+  font-size: 25px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background: #fff;
+}
+
+.app-header {
+  margin: 30px 0;
+}
+
+#toplink {
+  color: rgb(45, 178, 255);
+  font-size: 40px;
+  /* opacity: .7; */
+}
+
 .squirrels-container {
   display: flex;
   justify-content: space-around;
@@ -18,23 +90,20 @@
   float: center;
 }
 
-/* ul.welcome-img {
-    li {
-        max-width: 33%;
-    }
-    a {
-        img {
-            max-width: 100%;
-            transition: all .2s ease-in-out; 
-        }
-        img:hover {
-            opacity: 0.7;
-             transform: scale(1.1);
-        }
-    }
-} */
+.hovers {
+  transition: all .2s ease-in-out;
+
+}
+
+.hovers:hover {
+  opacity: .9;
+  transform: scale(1.06);
+}
+
+
 
 #welcomess {
+  margin-top: 10px;
   color: rgb(45, 178, 255);
   font-size: 50px;
   width: 70%;
@@ -49,80 +118,9 @@
   width: 260px;
   height: 50px;
   border: 3px solid #096b4e;
-  padding: 10px;
-  font-size: 1em;
+  padding: 14px;
+  font-size: 1rem;
   height: 1rem;
 }
 
 /* -------------------------------------------------- */
-
-body {
-  margin: 10px;
-}
-
-body {
-  background: url(http://sfwallpaper.com/images/brown-wood-wallpaper-15.jpg);
-  background-attachment: fixed;
-}
-
-h1 {
-  text-align: left;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  color: rgb(184, 184, 184);
-}
-
-h1 {
-  color: rgb(252, 200, 133);
-}
-
-h2 {
-  color: rgb(252, 200, 133);
-  margin: 10px;
-}
-
-img {
-  margin: 10px;
-  width: 200px;
-}
-
-#toplink {
-  color: rgb(45, 178, 255);
-  font-size: 40px;
-  /* opacity: .7; */
-}
-
-a:link {
-  margin: 10px;
-  color: rgb(45, 255, 175);
-  font-size: 20px;
-}
-
-p {
-  color: rgb(45, 255, 175);
-  font-size: 25px;
-}
-
-a:visited {
-  margin: 10px;
-  color: rgb(45, 255, 175);
-}
-
-body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 1em;
-  padding: 0;
-  margin: 10;
-}
-
-hr {
-  width: 100%;
-  height: 1px;
-  background: #fff;
-}

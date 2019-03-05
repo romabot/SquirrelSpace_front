@@ -1,7 +1,6 @@
 import React from "react"
 import SquirrelList from "./SquirrelList"
 import MySquirrels from "./MySquirrels"
-import { Link } from "react-router-dom"
 
 class SquirrelPage extends React.Component {
   state = {
@@ -13,53 +12,73 @@ class SquirrelPage extends React.Component {
     fetch("http://localhost:3000/api/v1/squirrels")
       .then(res => res.json())
       .then(allSquirrels => {
-        this.setState({ allSquirrels })
+        this.setState({
+          allSquirrels: allSquirrels.filter(squirrel => !squirrel.caught),
+          mySquirrels: allSquirrels.filter(squirrel => squirrel.caught)
+        })
       })
   }
 
   catchSquirrel = squirrelObj => {
-    squirrelObj.caught = true
-
-    this.setState({
-      allSquirrels: this.state.allSquirrels.filter(
-        squirrel => squirrel.id !== squirrelObj.id
-      )
-    })
-
-    let squirrelFav = this.state.mySquirrels.find(
-      squirrel => squirrel.id === squirrelObj.id
-    )
-    if (!squirrelFav) {
-      this.setState({
-        mySquirrels: [...this.state.mySquirrels, squirrelObj]
+    fetch(`http://localhost:3000/api/v1/squirrels/${squirrelObj.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        caught: true
       })
-    }
+    })
+      .then(res => res.json())
+      .then(data => {
+        squirrelObj.caught = true
+
+        this.setState({
+          allSquirrels: this.state.allSquirrels.filter(
+            squirrel => squirrel.id !== squirrelObj.id
+          )
+        })
+
+        let squirrelFav = this.state.mySquirrels.find(
+          squirrel => squirrel.id === squirrelObj.id
+        )
+        if (!squirrelFav) {
+          this.setState({
+            mySquirrels: [...this.state.mySquirrels, squirrelObj]
+          })
+        }
+      })
   }
 
   removeSquirrel = squirrelObj => {
-    squirrelObj.caught = false
-
-    this.setState({
-      allSquirrels: [squirrelObj, ...this.state.allSquirrels]
+    fetch(`http://localhost:3000/api/v1/squirrels/${squirrelObj.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        caught: false
+      })
     })
-
-    this.setState({
-      mySquirrels: this.state.mySquirrels.filter(
-        squirrel => squirrel.id !== squirrelObj.id
-      )
-    })
+      .then(res => res.json())
+      .then(data => {
+        squirrelObj.caught = false
+        this.setState({
+          allSquirrels: [squirrelObj, ...this.state.allSquirrels]
+        })
+        this.setState({
+          mySquirrels: this.state.mySquirrels.filter(
+            squirrel => squirrel.id !== squirrelObj.id
+          )
+        })
+      })
   }
 
   render() {
     return (
       <>
-        <Link id="toplink" to={"/"}>
-          🐿 SquirrelSpace
-        </Link>
-        <Link id="stashLink" to={"/stashes"}>
-          🧺 STASHES
-        </Link>
-        <h1 className="main-logo" />
         <div className="squirrels-container">
           <SquirrelList
             className="squirrel-list"

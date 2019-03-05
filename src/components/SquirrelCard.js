@@ -22,7 +22,7 @@ const SquirrelCard = props => {
   return (
     <>
       <h2>{squirrel.name}</h2>
-      <Link to={`/info/${squirrel.id}`}><img alt={squirrel.name} src={squirrel.img}/></Link>
+      <Link to={`/info/${squirrel.id}`}><img className="hovers" alt={squirrel.name} src={squirrel.img}/></Link>
       <br/>
       <Link to={`/info/${squirrel.id}`}>INFO</Link>
       {buttonSwitch()}
