@@ -26,13 +26,15 @@ class Info extends React.Component {
             <div>
                 <Link to={`/stashes`}>🌈 Back To stashes</Link>
                 <h1>{this.state.stash.name}</h1>
-                <img alt={this.state.stash.name} src={this.state.stash.img} />
+                <img className="stash-img" alt={this.state.stash.name} src={this.state.stash.img} />
+                <Link to={`/info/${this.state.stash.squirrel.id}`}><h4>{this.state.stash.squirrel.name}</h4></Link >
+                <span className="owns-this">owns this stash!</span>
 
                 <br />
-                <h2>SNACK:</h2>
-                <Link to={`/info/${this.state.stash.squirrel.id}`}><h1>{this.state.stash.squirrel.name}</h1></Link >
-                <h1>{this.state.stash.snack.name}</h1>
-                <h1>{this.state.stash.snack.description}</h1>
+                <h1>SNACK:</h1>
+                <h2>{this.state.stash.snack.name}</h2>
+                <h4 className="snack-description">{this.state.stash.snack.description}</h4>
+                
             </div>
         )
     }

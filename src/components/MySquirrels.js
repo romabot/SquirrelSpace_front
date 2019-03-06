@@ -15,7 +15,7 @@ class MySquirrels extends React.Component {
     return (
       <>
         <div className="squirrel-list">
-          <h2>🌈 My Squirrel Friends</h2>
+          <h2 className="squirrel-stash">🌈 My Squirrel Friends</h2>
           {this.squirrelsMapped()}
         </div>
       </>

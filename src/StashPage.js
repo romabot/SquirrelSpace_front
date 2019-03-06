@@ -19,7 +19,7 @@ class StashPage extends React.Component {
 
     render() {
         return (<div>
-            <Link to={`/squirrels`}>🌈 Back To Squirrels</Link>
+            {/* <Link to={`/squirrels`}>🌈 Back To Squirrels</Link> */}
             <div className="squirrels-container">
                 <StashList stashes={this.state.stashes} />
             </div>

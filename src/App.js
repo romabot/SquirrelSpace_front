@@ -17,17 +17,22 @@ class App extends React.Component {
           <Link id="toplink" to={"/"}>
             🐿 SquirrelSpace
           </Link>
+          <span className="squirrel-stash">
           <Link id="stashLink" to={"/stashes"}>
             🧺 STASHES
           </Link>
+          <Link id="stashLink" to={"/squirrels"}>
+            🐿 SQUIRRELS
+          </Link>
+              </span>
         </header>
         <main>
             <Switch>
-              <Route exact path="/" component={Welcome} />
               <Route exact path="/squirrels" component={SquirrelPage} />
               <Route exact path="/stashes" component={Stashes} />
               <Route path="/stashes/:id" component={StashInfo} />
               <Route path="/info/:id" component={Info} />
+              <Route exact path="/" component={Welcome} />
             </Switch>
         </main>
         <footer>&copy; 2019 ROMA</footer>

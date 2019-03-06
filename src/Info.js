@@ -35,7 +35,7 @@ class Info extends React.Component {
 
     return (
       <div>
-        <Link to={`/squirrels`}>🌈 Back To Squirrels</Link>
+        {/* <Link to={`/squirrels`}>🌈 Back To Squirrels</Link> */}
         <h1>{this.state.squirrel.name}</h1>
         <p>{this.state.squirrel.bio}</p>
         <img alt={this.state.squirrel.name} src={this.state.squirrel.img} />
