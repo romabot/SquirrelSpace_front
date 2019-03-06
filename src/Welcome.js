@@ -6,12 +6,13 @@ class Welcome extends React.Component {
     return (
       <>
         <div className="welcome-title">
-          <Link id="welcomess" to={"/squirrels"}>
+          <img id="squirrel-logo" alt="" src="https://i.imgur.com/ZFoyNCS.png"></img>
+          {/* <Link id="welcomess" to={"/squirrels"}>
             <span role="img" aria-label="rainbow">
               🌈
             </span>
             WELCOME TO SQUIRRELSPACE
-          </Link>
+          </Link> */}
         </div>
         <Link to={"/squirrels"}>
           <img

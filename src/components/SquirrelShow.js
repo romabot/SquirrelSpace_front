@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 
-class Info extends React.Component {
+class SquirrelShow extends React.Component {
   state = {
     squirrel: {},
     loading: true
@@ -22,11 +22,22 @@ class Info extends React.Component {
     return this.state.squirrel.stashes.map(stash => {
       return (
         <Link key={stash.id} to={`/stashes/${stash.id}`}>
-          <h4>{stash.name}</h4>
+          <h4 className="squirrel-stash-info">{stash.name}</h4>
         </Link>
       )
     })
   }
+
+
+  deleteHandle = () => {
+    fetch(`http://localhost:3000/api/v1/squirrels/${this.state.squirrel.id}`, {
+      method: "DELETE"
+    }).then(res => res.json())
+    .then(data =>{
+      this.props.history.push('/squirrels')
+    })
+  } 
+
 
   render() {
     if (this.state.loading) {
@@ -35,10 +46,11 @@ class Info extends React.Component {
 
     return (
       <div>
-        {/* <Link to={`/squirrels`}>🌈 Back To Squirrels</Link> */}
         <h1>{this.state.squirrel.name}</h1>
         <p>{this.state.squirrel.bio}</p>
         <img alt={this.state.squirrel.name} src={this.state.squirrel.img} />
+        <br/>
+        <button onClick={this.deleteHandle} className="delete" >🐿 DELETE</button>
         <br />
         <h2>STASH:</h2>
         {this.stashesMap()}
@@ -47,4 +59,4 @@ class Info extends React.Component {
   }
 }
 
-export default Info
+export default SquirrelShow

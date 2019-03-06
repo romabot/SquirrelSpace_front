@@ -2,6 +2,7 @@ import React from "react"
 import SquirrelList from "./SquirrelList"
 import MySquirrels from "./MySquirrels"
 import CreateSquirrel from "./CreateSquirrel"
+import { BrowserRouter as Link } from "react-router-dom"
 
 class SquirrelPage extends React.Component {
   state = {
@@ -87,6 +88,7 @@ addSquirrel = (squirrelObj) => {
   render() {
     return (
       <>
+        <Link to={"/"}><img id="squirrel-logo2" alt="Squirrel" src="https://i.imgur.com/ZFoyNCS.png"></img></Link>
         <CreateSquirrel addSquirrel={this.addSquirrel}/>
         <div className="squirrels-container">
           <SquirrelList

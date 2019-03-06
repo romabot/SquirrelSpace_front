@@ -40,8 +40,10 @@ class CreateSquirrel extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="create-form">
-        <input
+      <>
+      <h4 className="create-text">Create Squirrel</h4>
+      <form onSubmit={this.handleSubmit}>
+          <input className="create-form"
           type="text"
           placeholder="SQUIRREL NAME"
           name="nameValue"
@@ -49,6 +51,7 @@ class CreateSquirrel extends React.Component {
           onChange={this.handleInputChange}
         />
         <input
+          className="create-form"
           type="text"
           name="imageValue"
           placeholder="IMAGE URL"
@@ -56,14 +59,18 @@ class CreateSquirrel extends React.Component {
           onChange={this.handleInputChange}
         />
         <input
+          className="create-form"
           type="text"
           name="bioValue"
           value={this.state.bioValue}
           placeholder="BIO"
           onChange={this.handleInputChange}
         />
-        <input type="submit" value="submit" />
+        <input 
+        className="submit"
+        type="submit" value="submit" />
       </form>
+      </>
     )
   }
 }

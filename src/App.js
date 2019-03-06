@@ -4,7 +4,7 @@ import SquirrelPage from "./components/SquirrelPage"
 import Welcome from "./Welcome"
 import Stashes from "./StashPage"
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
-import Info from "./Info"
+import SquirrelShow from "./components/SquirrelShow"
 import StashInfo from "./StashInfo"
 
 class App extends React.Component {
@@ -14,9 +14,11 @@ class App extends React.Component {
           <Router>
             <>
         <header className="app-header">
-          <Link id="toplink" to={"/"}>
+          <div className="link-hover">
+          <Link  id="toplink" to={"/"}>
             🐿 SquirrelSpace
           </Link>
+          </div>
           <span className="squirrel-stash">
           <Link id="stashLink" to={"/stashes"}>
             🧺 STASHES
@@ -31,7 +33,7 @@ class App extends React.Component {
               <Route exact path="/squirrels" component={SquirrelPage} />
               <Route exact path="/stashes" component={Stashes} />
               <Route path="/stashes/:id" component={StashInfo} />
-              <Route path="/info/:id" component={Info} />
+              <Route path="/squirrels/:id" component={SquirrelShow} />
               <Route exact path="/" component={Welcome} />
             </Switch>
         </main>
