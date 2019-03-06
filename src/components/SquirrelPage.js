@@ -1,6 +1,7 @@
 import React from "react"
 import SquirrelList from "./SquirrelList"
 import MySquirrels from "./MySquirrels"
+import CreateSquirrel from "./CreateSquirrel"
 
 class SquirrelPage extends React.Component {
   state = {
@@ -76,9 +77,17 @@ class SquirrelPage extends React.Component {
       })
   }
 
+addSquirrel = (squirrelObj) => {
+    this.setState({
+      allSquirrels: [squirrelObj, ...this.state.allSquirrels]
+    })
+}
+
+
   render() {
     return (
       <>
+        <CreateSquirrel addSquirrel={this.addSquirrel}/>
         <div className="squirrels-container">
           <SquirrelList
             className="squirrel-list"
