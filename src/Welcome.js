@@ -4,18 +4,22 @@ import { Link } from "react-router-dom"
 class Welcome extends React.Component {
   render() {
     return (
-      <>
-        <div className="welcome-title">
-          <img id="squirrel-logo" alt="" src="https://i.imgur.com/ZFoyNCS.png"></img>
-        </div>
+      <div className="welcome-div">
+      
+          <img
+            id="squirrel-logo"
+            alt=""
+            src="https://i.imgur.com/ZFoyNCS.png"
+          ></img>
+        
         <Link to={"/squirrels"}>
           <img
             className="welcome-img hovers"
             alt="SquirrelSpace"
-            src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-305430.jpg"
+            src="http://eskipaper.com/images/squirrel-wallpaper-9.jpg"
           />
         </Link>
-      </>
+      </div>
     )
   }
 }

@@ -1,12 +1,12 @@
 import React from "react"
 import "./App.css"
-// import SquirrelPage from "./components/SquirrelPage"
-// import Welcome from "./Welcome"
+// import SquirrelPage from "./components/SquirrelPage"   
+import Welcome from "./Welcome"
 // import Stashes from "./StashPage"
-// import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 // import SquirrelShow from "./components/SquirrelShow"
 // import StashInfo from "./StashInfo"
-import HabitaryPage from "../src/"
+// import HabitaryPage from "../src/"
 
 class App extends React.Component {
   render() {
@@ -16,18 +16,11 @@ class App extends React.Component {
           <>
             <header className="app-header">
               <div className="link-hover">
-                <Link id="toplink" to={"/"}>
-                  🌀 Habitary 🌀
-                </Link>
               </div>
             </header>
             <main>
               <Switch>
-                <Route exact path="/squirrels" component={HabitaryPage} />
-                {/* <Route exact path="/stashes" component={Stashes} />
-                <Route path="/stashes/:id" component={StashInfo} />
-                <Route path="/squirrels/:id" component={SquirrelShow} />
-                <Route exact path="/" component={Welcome} /> */}
+                <Welcome/>
               </Switch>
             </main>
             {/* <footer>&copy; 2019 ROMA</footer> */}
