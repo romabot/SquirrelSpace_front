@@ -23,6 +23,18 @@ h1:hover {
   animation-timing-function: linear;   
 }
 
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+
+
+
 img:hover { 
   animation: wiggle 100ms infinite;
   animation-timing-function: linear;   
@@ -248,8 +260,20 @@ p:hover {
 }
 .snack-description {
   margin-bottom: 100px;
-  margin: 30px;
+  margin-bottom: 40px;
+  margin-left: 35px;
   color: rgb(45, 255, 174);
+}
+
+.snack-name-food {
+  margin-left: 10px;
+
+}
+
+.move-right {
+  margin-left: 10px
+
+
 }
 
 .welcome-title {
@@ -339,14 +363,6 @@ p:hover {
 
 /* -------------------------------------------------- */
 
-@-webkit-keyframes hue {
-  from {
-    -webkit-filter: hue-rotate(0deg);
-  }
 
-  to {
-    -webkit-filter: hue-rotate(360deg);
-  }
-}
 
 

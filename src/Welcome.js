@@ -7,12 +7,6 @@ class Welcome extends React.Component {
       <>
         <div className="welcome-title">
           <img id="squirrel-logo" alt="" src="https://i.imgur.com/ZFoyNCS.png"></img>
-          {/* <Link id="welcomess" to={"/squirrels"}>
-            <span role="img" aria-label="rainbow">
-              🌈
-            </span>
-            WELCOME TO SQUIRRELSPACE
-          </Link> */}
         </div>
         <Link to={"/squirrels"}>
           <img

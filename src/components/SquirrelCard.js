@@ -22,7 +22,7 @@ const SquirrelCard = props => {
   return (
     <>
       <h1 className="zero-margin">{squirrel.name}</h1>
-      <Link to={`/squirrels/${squirrel.id}`}><img className="hovers" alt={squirrel.name} src={squirrel.img}/></Link>
+      <Link to={`/skillselect`}><button>SELECT SKILL<button/></Link>
       <br/>
       <Link to={`/squirrels/${squirrel.id}`} className="zero-margin">INFO</Link>
       {buttonSwitch()}
