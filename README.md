@@ -1,5 +1,5 @@
 
-![SquirrelSpace](https://i.imgur.com/JkJmtH0.png)
+![SquirrelSpace](https://i.imgur.com/sbV2msw.png)
 
 # SquirrelSpace 🐿
 A social media platform for squirrels.. sort of. 
