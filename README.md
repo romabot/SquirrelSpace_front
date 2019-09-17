@@ -1,10 +1,4 @@
 
-![SquirrelSpace](https://i.imgur.com/sbV2msw.png)
-
-# SquirrelSpace 🐿
-A social media platform for squirrels.. sort of. 
-
-• Look at squirrels 
 
 • Add new squirrels 
  
