@@ -1,18 +1,4 @@
 
-![SquirrelSpace](https://i.imgur.com/sbV2msw.png)
-
-# SquirrelSpace 🐿
-A social media platform for squirrels.. sort of. 
-
-• Look at squirrels 
-
-• Add new squirrels 
- 
-• Delete old squirrels 
-
-• Squirrels have stashes where they keep snacks
-
-## Production 
 
 • CLIENT SIDE: JAVASCRIPT ES6 / REACT / CUSTOM CSS (No Bootstrap/Samantic etc..)
 
